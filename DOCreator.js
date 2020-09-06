@@ -17,14 +17,14 @@ class DOCreatorNode {
         this.children = children;
     }
 
-    push (DOCreatorNode) {
-        if (typeof DOCreatorNode.level == 'undefined' || DOCreatorNode.level <= this.level) {
+    push (DOCreatorNodeObj) {
+        if (typeof DOCreatorNodeObj.level == 'undefined' || DOCreatorNodeObj.level <= this.level) {
             throw "Invalid Heading Level";
         }
-        if (DOCreatorNode.level == (this.level + 1) || !this.children[0]) {
-            return this.children.push(DOCreatorNode);
+        if (DOCreatorNodeObj.level == (this.level + 1) || !this.children[0]) {
+            return this.children.push(DOCreatorNodeObj);
         }
-        return this.children[this.children.length - 1].push(DOCreatorNode);
+        return this.children[this.children.length - 1].push(DOCreatorNodeObj);
     }
 }
 
