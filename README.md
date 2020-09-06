@@ -1,6 +1,7 @@
 # Simple-document-outline-creator
 Simple Document outline creator with javascript
-##Usage
+
+## Usage
 Generate for headings in entire document:
 ```javascript
 let raw = DOCreator.getRaw();
