@@ -21,9 +21,8 @@ class DOCreatorNode {
         if (typeof DOCreatorNodeObj.level == 'undefined' || DOCreatorNodeObj.level <= this.level) {
             throw "Invalid Heading Level";
         }
-        if (DOCreatorNodeObj.level == (this.level + 1) || !this.children[0]) {
-            return this.children.push(DOCreatorNodeObj);
-        }
+        if (this.children.length == 0 || DOCreatorNodeObj.level <= this.children[this.children.length - 1].level)
+            return this.children.push(DOCreatorNodeObj); 
         return this.children[this.children.length - 1].push(DOCreatorNodeObj);
     }
 }
